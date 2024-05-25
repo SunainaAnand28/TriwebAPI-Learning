@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .formgroup {
+            margin-bottom: 15px;
+        }
+        .formgroup label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .formgroup input[type="text"],
+        .formgroup input[type="email"],
+        .formgroup input[type="tel"],
+        .formgroup input[type="date"],
+        .formgroup input[type="number"],
+        .formgroup input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .formgroup .gender-options {
+            display: flex;
+            align-items: center;
+        }
+        .formgroup .gender-options label {
+            margin-right: 10px;
+        }
+        .formgroup .gender-options input {
+            margin-right: 5px;
+        }
+        .formgroup input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .formgroup input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+       
+</head>
+<body>
+    <div class="container">
+        <h2>User Registration Form</h2>
+        <form action="" >
+            
+            <div class="formgroup">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+
+            
+            <div class="formgroup">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+
+           
+            <div class="formgroup">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            
+            <div class="formgroup">
+                <label for="contact">Contact:</label>
+                <input type="tel" id="contact" name="contact" required>
+            </div>
+
+            
+            <div class="formgroup">
+                <label for="dob">Date Of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            
+            <div class="formgroup">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="0" required>
+            </div>
+
+            
+            <div class="formgroup">
+                <label>Gender:</label>
+                <div class="gender-options">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other" required>
+                    <label for="other">Other</label>
+                </div>
+            </div>
+
+            <!-- Resume File -->
+            <div class="formgroup">
+                <label for="resume">Resume:</label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="formgroup">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
