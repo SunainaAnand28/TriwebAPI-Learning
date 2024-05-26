@@ -1,0 +1,26 @@
+body{
+
+    background-color:#c3c8c1;
+}
+table{ 
+    border-collapse: separate;
+    margin: auto;
+    background-color: rgba(177, 168, 159, 0.853);
+    box-sizing: border-box;
+    width: 600px; 
+    height: 400px;
+ }
+h1{
+    text-align: center;
+
+}
+td,th{
+    background-color: rgba(237, 250, 250, 0.903);
+}
+
+table, th, td {
+  font-size: large;
+  border: 2px solid;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
