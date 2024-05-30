@@ -7,3 +7,4 @@ Over the next six months, I 'll be diving deep into the MERN stack (MongoDB, Exp
 * Experience in building and deploying full-stack web applications.
 * Understanding of industry best practices and development workflows.
 * Enhanced problem-solving and debugging skills.
+* Communication skills.
