@@ -1,0 +1,73 @@
+.maindiv{
+    background: #000;
+    width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    
+}
+.userdiv{
+    width: 50%;
+    height: 150px;
+}
+
+.reddiv{
+ background-color: red;
+ float: left;
+ display: inline;
+ width: 50%;
+ 
+}
+
+.greendiv{
+    background-color: green;
+    width: 50%;
+    display: inline-block;
+   
+}
+
+.bluediv{
+    background-color: blue;
+    width: 50%;
+    display: inline;
+    float: left;
+    
+}
+
+.yellowdiv{
+    background-color: yellow;
+    width: 50%;
+    display: inline-block;
+    
+}
+.userblock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.btn{
+    background-color: rgb(222, 166, 87);
+    color: white;
+    border: 2px solid;
+    width: 150px;
+    height: 30px;
+    margin: 10px 20px;
+
+}
+.inputbtn{
+    background-color: rgb(233, 219, 200);
+    color: white;
+    border: 2px solid;
+    width: 150px;
+    height: 30px;
+    margin: 10px 125px;
+
+}
+.my_user{
+    height: 40px;
+    width: 100px;
+    color: rgb(9, 9, 9);
+    font-size: larger;
+    font-weight: bold;
+    border: 3px dotted rgb(0, 0, 0);
+}
