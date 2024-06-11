@@ -1,5 +1,5 @@
 <p>
-<img src="https://app.innmind.com/cdn/storage/userFiles/FHxg5j9jj53fzo9CB/original/logo.png" height="250px" widhth ="250px" ></img>
+<img src="https://app.innmind.com/cdn/storage/userFiles/FHxg5j9jj53fzo9CB/original/logo.png" height="250px" widhth ="250px" style="margin-left:50%" ></img>
 </p>
 
 
