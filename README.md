@@ -1,5 +1,5 @@
 
-<img src="https://app.innmind.com/cdn/storage/userFiles/FHxg5j9jj53fzo9CB/original/logo.png" height="100px" widhth ="150px" ></img>
+<img src="https://app.innmind.com/cdn/storage/userFiles/FHxg5j9jj53fzo9CB/original/logo.png" height="250px" widhth ="250px" ></img>
 <p>
 <h1>6 Month Internship Program at TriwebAPI 
  </h1>
