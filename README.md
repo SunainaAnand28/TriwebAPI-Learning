@@ -1,16 +1,13 @@
+<p>
+<img src="https://app.innmind.com/cdn/storage/userFiles/FHxg5j9jj53fzo9CB/original/logo.png" height="250px" widhth ="250px" ></img>
+</p>
 
-<<<<<<< HEAD
+
+
 # MERN Stack Internship Program at TriwebAPI
 
 Hello! My name is Sunaina Anand, and this is my repository for the project that I am working on during my 6-month internship at TriWebAPI.  
 This document will guide you through the setup, structure, and specifics of the project. Over the next six months, I'll be diving deep into the MERN stack (MongoDB, Express.js, React, Node.js) to build scalable and robust web applications.
-=======
-<img src="https://app.innmind.com/cdn/storage/userFiles/FHxg5j9jj53fzo9CB/original/logo.png" height="250px" widhth ="250px" ></img>
-<p>
-<h1>6 Month Internship Program at TriwebAPI 
- </h1>
->>>>>>> 7dd9123116a47d1804e7d66d2ca44f26031f338a
-
 
 
 ## Table of Contents
@@ -53,10 +50,6 @@ This document will guide you through the setup, structure, and specifics of the 
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="45" alt="VSCode Logo"/>
 </p>
 <hr>
-
-
-
-
 
 ### Contact
 
