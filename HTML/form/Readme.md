@@ -27,4 +27,3 @@ Finally, I explored advanced topics:
 - Designing complex forms with various input types
 - Creating and styling tables
 - Implementing semantic HTML for better accessibility
-
