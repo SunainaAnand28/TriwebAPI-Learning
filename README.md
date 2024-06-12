@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://app.innmind.com/cdn/storage/userFiles/FHxg5j9jj53fzo9CB/original/logo.png" height="250px" widhth ="250px" style="margin-left:50%" ></img>
+<img src="https://app.innmind.com/cdn/storage/userFiles/FHxg5j9jj53fzo9CB/original/logo.png" height="250px" widhth ="250px" ></img>
 </div>
 
 
@@ -25,6 +25,7 @@ This document will guide you through the setup, structure, and specifics of the 
 - [ES6](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/ES6#readme)
 - [ES2020](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/ES2020#readme)
 - [My SQL](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/My%20SQL#readme)
+- [MongoDB](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/MongoDB#readme)
 - [Projects](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/Projects#readme)
   - [Basic HTML-CSS-JS Project](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/Projects/Basic%20HTML-CSS-JS%20Project#readme)
   - [Basic JS Project](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/Projects/BasicJSProject#readme)
