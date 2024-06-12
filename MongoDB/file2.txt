@@ -1,0 +1,35 @@
+
+-----> Find 
+db.collection1.find()
+[
+  {
+    _id: ObjectId('66694b1b2b55a96c15cdcdf6'),
+    name: 'Sunaina',
+    mobile: 1234
+  },
+  {
+    _id: ObjectId('66694eb42b55a96c15cdcdf7'),
+    name: 'Sunaina',
+    mobile: 1234
+  },
+  {
+    _id: ObjectId('66694eb42b55a96c15cdcdf8'),
+    name: 'TriwebAPI',
+    mobile: 1234
+  }
+]
+
+-----> Find Name
+db.collection1.find({name:"Sunaina"})
+[
+  {
+    _id: ObjectId('66694b1b2b55a96c15cdcdf6'),
+    name: 'Sunaina',
+    mobile: 1234
+  },
+  {
+    _id: ObjectId('66694eb42b55a96c15cdcdf7'),
+    name: 'Sunaina',
+    mobile: 1234
+  }
+]
