@@ -1,0 +1,23 @@
+----
+FETCH DATA
+
+
+---> SELECT WITH AND
+
+SELECT *from 'students' WHERE classid = 2 AND mobile = 1234
+
+
+----> SELECT USING OR
+
+SELECT *from 'students' WHERE classid = 2 OR  classid = 3
+
+---> SELECT USING IN
+
+SELECT *from 'students' WHERE classid = 2 IN  class = 3
+
+
+SELECT student_name FROM 'students' WHERE id = 1
+
+
+SELECT *from 'students' WHERE id = 2
+
