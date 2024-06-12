@@ -1,0 +1,36 @@
+CREATE DATABASE mysql_learning_TriwebAPI;
+use mysql_learning_triwebapi;
+
+
+
+CREATE TABLE Students(
+id int(11) NOT null PRIMARY KEY,
+student_name varchar(255) NOT null,
+class int(11) DEFAULT 6,
+mobile varchar(100)    
+);
+
+
+CREATE TABLE teacher(
+id int(11) NOT null AUTO_INCREMENT PRIMARY KEY,
+teacher_name varchar(255) NOT null,
+mobile varchar(100) not null   
+    
+);
+
+CREATE TABLE classes(
+id int(11) not null AUTO_INCREMENT,
+classname varchar(100) NOT null,
+classteacher int(11) not null,
+PRIMARY KEY(id),
+    
+FOREIGN KEY(classteacher) REFERENCES teacher(id)
+);
+
+
+ALTER table students
+CHANGE class class_id int(11) NOT null;
+
+
+ALTER table students
+ADD FOREIGN KEY (class_id) REFERENCES classes(id)
