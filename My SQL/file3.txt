@@ -1,0 +1,18 @@
+CREATE TABLE student_name (
+    id INT PRIMARY KEY,
+    Name VARCHAR(50),
+    age INT NOT NULL
+);
+ 
+drop table student_name;
+
+
+create table student (
+    id INT PRIMARY KEY,
+    Name VARCHAR(50),
+    age INT NOT NULL
+);
+
+insert into student values(1,"Sunaina",19);
+insert into student values(2,"TriwebAPI",20);
+
