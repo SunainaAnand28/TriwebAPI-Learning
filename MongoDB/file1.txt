@@ -1,0 +1,43 @@
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+
+show dbs
+MyDb           40.00 KiB
+sample_mflix  109.88 MiB
+admin         308.00 KiB
+local          34.47 GiB
+
+Atlas atlas-b442y2-shard-0 [primary] test> db.collection1.insertOne({name: "Sunaina", mobile: 1234})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66694b1b2b55a96c15cdcdf6')
+
+}
+
+
+---> ERROR
+Atlas atlas-b442y2-shard-0 [primary] test> db.collection1.insertMany({name: "Sunaina", mobile: 1234},{name: "TriwebAPI", mobile: 1234})
+MongoInvalidArgumentError: Argument "docs" must be an array of documents
+
+
+
+---> Solved
+Atlas atlas-b442y2-shard-0 [primary] test> db.collection1.insertMany([{name: "Sunaina", mobile: 1234},{name: "TriwebAPI", mobile: 1234}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66694eb42b55a96c15cdcdf7'),
+    '1': ObjectId('66694eb42b55a96c15cdcdf8')
+  }
+}
+Atlas atlas-b442y2-shard-0 [primary] test>
+
+Atlas atlas-b442y2-shard-0 [primary] test> show dbs
+MyDb           40.00 KiB
+sample_mflix  109.88 MiB
+test           72.00 KiB
+admin         308.00 KiB
+local          34.47 GiB
+
+
+
