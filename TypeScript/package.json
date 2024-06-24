@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "typescript": "^5.5.2",
+    "yarn": "^1.22.22"
+  },
+  "name": "BasicNodeProject",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "Sunaina Anand",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.8",
+    "nodemon": "^3.1.4"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "start:dev": "nodemon ./dist/app.js",
+    "build":"tsc"
+  }
+}
