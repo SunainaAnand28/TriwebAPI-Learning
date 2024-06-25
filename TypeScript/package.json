@@ -17,6 +17,6 @@
   "scripts": {
     "start": "node app.js",
     "start:dev": "nodemon ./dist/app.js",
-    "build":"tsc"
+    "build":"tsc --noEmmitOnError"
   }
 }
