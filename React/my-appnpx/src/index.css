@@ -1,14 +1,1 @@
-/* src/Modal.css */
-.modal {
-    position: fixed;
-    top: 25%;
-    left: 25%;
-    width: 50%;
-    height: 50%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
- 
