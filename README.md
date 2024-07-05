@@ -31,6 +31,8 @@ This document will guide you through the setup, structure, and specifics of the 
 - [Projects](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/Projects#readme)
   - [Basic HTML-CSS-JS Project](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/Projects/Basic%20HTML-CSS-JS%20Project#readme)
   - [Basic JS Project](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/Projects/BasicJSProject#readme)
+- [TypeScript](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/TypeScript#readme)
+- [React](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/React#readme)
 
 ## Program Overview
 
