@@ -1,0 +1,63 @@
+Yarn
+Express
+Typescript
+Transpilation
+
+
+What is Rest API?
+
+
+-------------------
+
+MongoDB
+--aggregate 
+--insert : lecture
+--mongoose 
+
+nodejs -> MongoDB : ConnectionString
+
+user => users(table name)
+
+====================
+
+issue : regular build on development
+ts-node --dev install
+yarn add --dev ts-node
+
+yarn ts-node
+yarn run v1.22.22
+
+> repl
+
+----------
+Nodemon
+---->
+build effort reduced
+server started automatically
+- add extension
+- added which folder to be wathced by Nodemon
+- add extension
+- add execution 
+- customize nodemon.json
+
+>>>>>>>>>>>>>>>>>>>>>>> 
+password
+Why to not use base64
+encryption
+bcrypt for encryption
+--> how to verify the password for login 
+
+''''''''''''''''''''''''''''''''''
+jwt
+ installed
+
+ yarn add @types/jsonwebtoken
+
+```````````````````````````````````
+Break code --> divided user and auth routes
+
+authentication : A user have email and password, logged in.  
+autherization : a user can work on only his id, user roles (admin, user).
+middleware add in .post or .get etc methods on routes before forwarding request to controller.
+middleware --- routes --> middleware >> controller 
+middleware

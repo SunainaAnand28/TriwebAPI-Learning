@@ -1,0 +1,28 @@
+{
+  "name": "quizapp",
+  "version": "1.0.0",
+  "description": "This is a rest api for quiz app",
+  "main": "app.js",
+  "author": "Sunaina Anand",
+  "license": "MIT",
+  "dependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.5",
+    "typescript": "^5.5.3"
+  },
+  "scripts": {
+    "build": "tsc --noEmitOnError",
+    "start": "node ./dist/app.js",
+    "start:ts": "yarn ts-node ./src/app.ts",
+    "start:dev": "nodemon"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2"
+  }
+}
