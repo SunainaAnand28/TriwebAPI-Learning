@@ -60,4 +60,9 @@ authentication : A user have email and password, logged in.
 autherization : a user can work on only his id, user roles (admin, user).
 middleware add in .post or .get etc methods on routes before forwarding request to controller.
 middleware --- routes --> middleware >> controller 
-middleware
+middleware--->>>>authentication :: jwt
+* how to send token to jwt from postnam in authorization
+* how to fetch it from authorization 
+* how to decode it.
+
+> How to apply authorization.
