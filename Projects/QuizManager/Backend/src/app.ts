@@ -26,10 +26,16 @@ app.get("/", (req, res) => {
 // Redirect /user to UserRoute
 app.use("/user", UserRoute);
 
+// Redirect /auth
+app.use("/auth", authRoute);
+
 
 app.use((err:Error, req:Request, res: Response, next: NextFunction)=>{
-
+   console.log(err);
+   res.send("Something went wrong try again after sometime!")
 })
+
+
 
 mongoose.connect(connectionString 
 ).then(() => {

@@ -34,14 +34,13 @@ const registeruser = async (req: Request, res: Response, next: NextFunction) => 
         }
 
     } catch (error) {
-        resp = { status: "error", message: "Something went wrong !", data: {} };
-        res.status(500).send(resp);
+       next(error);
     }
 
 };
 
 // login 
-const loginUser = async (req: Request, res: Response) => {
+const loginUser = async (req: Request, res: Response, next: NextFunction) => {
     let resp: ReturnResponse;
 
     try {
@@ -65,7 +64,7 @@ const loginUser = async (req: Request, res: Response) => {
             
             const token = jwt.sign({ userId : user._id}, "myprivatekey1234",{expiresIn: "1h"} );
             
-            resp = { status: "success", message: "user logged in!", data: {} };
+            resp = { status: "success", message: "user logged in!", data: {token} };
             res.send(resp);
 
         } else {
@@ -75,8 +74,7 @@ const loginUser = async (req: Request, res: Response) => {
 
 
     } catch (error) {
-        resp = { status: "error", message: "Something went wrong!", data: {} };
-        return res.status(500).send(resp);
+       next(error);
     }
 
 

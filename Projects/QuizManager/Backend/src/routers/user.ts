@@ -13,7 +13,7 @@ router.get("/:userId", isAuthenticated,
     getUser); 
 
 // user should be authenticated
-// user sgould be authorized 
+// user should be authorized 
 
 // put /user/
 router.put("/",isAuthenticated, updateUser);

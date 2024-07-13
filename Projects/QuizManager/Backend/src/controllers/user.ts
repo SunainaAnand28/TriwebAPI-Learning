@@ -1,5 +1,5 @@
 // send/recieve data to/from database via model
-import { Request, Response } from "express";
+import { Request, Response, NextFunction } from "express";
 
 
 import User from "../models/user";
@@ -12,10 +12,8 @@ interface ReturnResponse {
 
 
 // GET
-const getUser = async (req: Request, res: Response) => {
+const getUser = async (req: Request, res: Response, next: NextFunction ) => {
    
-
-    console.log(req.userId);
 
     let resp: ReturnResponse;
     try {
@@ -37,15 +35,14 @@ const getUser = async (req: Request, res: Response) => {
         }
 
     } catch (error) {
-        resp = { status: "error", message: "Something went wrong !", data: {} };
-        res.status(500).send(resp);
+        next(error);
     }
 
 }
 
 
 // UPDATE
-const updateUser = async (req: Request, res: Response) => {
+const updateUser = async (req: Request, res: Response, next: NextFunction) => {
     let resp: ReturnResponse;
 
     try {
@@ -71,8 +68,7 @@ const updateUser = async (req: Request, res: Response) => {
         return res.status(200).send(resp);
 
     } catch (error) {
-        resp = { status: "error", message: "Something went wrong!", data: {} };
-        return res.status(500).send(resp);
+       next(error);
     }
 }
 
