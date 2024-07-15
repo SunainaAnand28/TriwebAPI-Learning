@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import jwt, { decode } from "jsonwebtoken";
+import ProjectError from "../helper/error";
 
 const isAuthenticated = async (
   req: Request,
@@ -8,11 +9,12 @@ const isAuthenticated = async (
 ) => {
 
   try {
+
     const authHeader = req.get("Authorization");
 
     if (!authHeader) {
-      const err = new Error("Not authenticated");
-      // err.statusCode = 401;
+      const err = new ProjectError("Not authenticated");
+       err.statusCode = 401;
       throw err;
     }
     // jwt -> decode using sign "myprivatekey1234"
@@ -25,15 +27,15 @@ const isAuthenticated = async (
       decodedToken = <any>jwt.verify(token, "myprivatekey1234");
 
     } catch (error) {
-      const err = new Error("Not authenticated");
-      //err.statuscode = 401;
+      const err = new ProjectError("No user exist");
+      err.statusCode = 401;
       throw err;
     }
 
     if (!decodedToken) {
-      const err = new Error("Not authenticated");
-      //err.statuscode = 401;
-      throw err;
+      const err = new ProjectError("No user exist");
+            err.statusCode = 401;
+            throw err;
     }
     // userId 
     req.userId = decodedToken.userId;

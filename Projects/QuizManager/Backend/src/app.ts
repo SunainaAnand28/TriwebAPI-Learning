@@ -3,16 +3,25 @@ import mongoose from "mongoose";
 
 import UserRoute from "./routers/user";
 import authRoute from "./routers/auth";
+import ProjectError from "./helper/error";
 
 const app = express();
 
+interface ReturnResponse {
+    status: "success" | "error";
+    message: String,
+    data: {}
+}
 const connectionString = process.env.CONNECTION_STRING || "";
 
 app.use(express.json());
 
-declare global{
+
+
+
+declare global {
     namespace Express {
-        interface Request{
+        interface Request {
             userId: String;
         }
     }
@@ -30,14 +39,31 @@ app.use("/user", UserRoute);
 app.use("/auth", authRoute);
 
 
-app.use((err:Error, req:Request, res: Response, next: NextFunction)=>{
-   console.log(err);
-   res.send("Something went wrong try again after sometime!")
+app.use((err: ProjectError, req: Request, res: Response, next: NextFunction) => {
+
+    // Email to corresponding email
+    // logger for error 
+
+    let message: String;
+    let statusCode: number;
+    if (!!err.statusCode && err.statusCode < 500) {
+        message = err.message;
+        statusCode = err.statusCode;
+    } else {
+        message = "Something went wrong please try after sometimes!";
+        statusCode = 500;
+    }
+    let resp: ReturnResponse = { status: "error", message, data: {} }
+    if (!!err.data) {
+        resp.data = err.data;
+    }
+
+    console.log(err.statusCode, err.message);
+    res.status(statusCode).send(resp);
+
 })
 
-
-
-mongoose.connect(connectionString 
+mongoose.connect(connectionString
 ).then(() => {
     app.listen(process.env.PORT, () => {
         console.log("Server Connected");

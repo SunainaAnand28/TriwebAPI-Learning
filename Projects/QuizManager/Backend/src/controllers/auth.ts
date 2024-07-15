@@ -3,11 +3,12 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken" ; 
 
 import User from "../models/user";
+import ProjectError from "../helper/error";
 
 interface ReturnResponse {
     status: "success" | "error";
     message: String,
-    data: {}
+    data: {} | []
 }
 
 // REGISTER
@@ -25,7 +26,10 @@ const registeruser = async (req: Request, res: Response, next: NextFunction) => 
         const result = await user.save();
 
         if (!result) {
-            resp = { status: "error", message: "No results Found", data: {} };
+            resp = { status: "error",
+                 message: "No results Found",
+                  data: {}  ,
+                 };
             res.send(resp);
         } else {
             resp = { status: "success", message: "Registration Done", data: { userId: result._id } };
@@ -51,8 +55,9 @@ const loginUser = async (req: Request, res: Response, next: NextFunction) => {
         const user = await User.findOne({ email })
 
         if(!user){
-            resp = { status: "error", message: " No user exist", data: {} };
-            return res.status(401).send(resp);
+            const err = new ProjectError("No user exist");
+            err.statusCode = 401;
+            throw err;
             
         }
         
@@ -68,8 +73,9 @@ const loginUser = async (req: Request, res: Response, next: NextFunction) => {
             res.send(resp);
 
         } else {
-            resp = { status: "error", message: "credentials mismatch", data: {} };
-            res.status(401).send(resp);
+            const err = new ProjectError("Credentials mismatch");
+            err.statusCode = 401;
+            throw err;
         }
 
 

@@ -66,3 +66,5 @@ middleware--->>>>authentication :: jwt
 * how to decode it.
 
 > How to apply authorization.
+
+Error Handling in Typescript
