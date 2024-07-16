@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken" ; 
+import { validationResult } from "express-validator";
 
 import User from "../models/user";
 import ProjectError from "../helper/error";
@@ -13,11 +14,16 @@ interface ReturnResponse {
 
 // REGISTER
 const registeruser = async (req: Request, res: Response, next: NextFunction) => {
-
-
+    
+    
     let resp: ReturnResponse;
-
+    
     try {
+
+        // Validation 
+        const ValidationError = validationResult(req);
+
+        //Validation end
         const email = req.body.email;
         const name = req.body.name;
         const password = await bcrypt.hash(req.body.password, 12);
