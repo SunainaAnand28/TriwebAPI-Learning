@@ -92,5 +92,15 @@ const loginUser = async (req: Request, res: Response, next: NextFunction) => {
 
 }
 
+const isUserExist = async (email:String) => {
+    
+  // find your user with email 
+    const user = await User.findOne({ email })
 
-export { registeruser, loginUser };
+    if(!user){
+       return false;
+    }
+    return true;
+}
+
+export { registeruser, loginUser, isUserExist };
