@@ -7,7 +7,7 @@ Transpilation
 What is Rest API?
 
 
--------------------
+____________________
 
 MongoDB
 --aggregate 
@@ -18,7 +18,7 @@ nodejs -> MongoDB : ConnectionString
 
 user => users(table name)
 
-====================
+__________________________________
 
 issue : regular build on development
 ts-node --dev install
@@ -47,13 +47,15 @@ encryption
 bcrypt for encryption
 --> how to verify the password for login 
 
-''''''''''''''''''''''''''''''''''
+__________________________________
+
 jwt
  installed
 
  yarn add @types/jsonwebtoken
 
-```````````````````````````````````
+__________________________________
+
 Break code --> divided user and auth routes
 
 authentication : A user have email and password, logged in.  
@@ -68,3 +70,27 @@ middleware--->>>>authentication :: jwt
 > How to apply authorization.
 
 Error Handling in Typescript
+
+__________________________________
+
+Express validator
+validate name and email. 
+
+__________________________________
+
+How to verify and confirm password
+How to check, like username or dob or city name is not included in password.
+
+------------------
+USER MODULE
+____________________
+* User will register with a valid email, name and password.
+* User can get the info by id.
+* User needs email and password to login, and get a token.
+* Token will be sent into the header in Postman.
+* User can get it's record.
+* To update - id and update value will be sent in PUT request.
+
+
+------------------
+QUIZ ROUTE 
