@@ -90,7 +90,15 @@ ____________________
 * Token will be sent into the header in Postman.
 * User can get it's record.
 * To update - id and update value will be sent in PUT request.
+___________________________________________________________________
 
-
+Question:
+If user logged in and sent the PUT token with 1 hour expiry
+  Scene 1 : then token will expire after one hour.
+  Scene 2 : Token should expire after 1 hour of inactivity.
 ------------------
 QUIZ ROUTE 
+
+controller - function body
+model create for QUIZ
+authenticate - Postman - shortcut - environvent setup 

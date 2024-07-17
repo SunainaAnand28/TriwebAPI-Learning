@@ -19,7 +19,7 @@ router.post("/", [
     body('email')
         .trim()
         .isEmail()
-        .custom((emailID:String) => {
+        .custom((emailID) => {
             return isUserExist(emailID)
                 .then((status:Boolean) => {
                     if (status) {
@@ -39,7 +39,7 @@ router.post("/", [
         .withMessage('Enter atleast 6 character long password '),
         body('confirm_password')
         .trim()
-        .custom((value:String, {req})=>{
+        .custom((value:string, {req})=>{
             if(value != req.body.password){
                 return Promise.reject("password mismatch!")
             }
@@ -48,7 +48,8 @@ router.post("/", [
     
 ], registeruser);
 
-// login /auth/login
+// login
+// /auth/login
 router.post('/login', loginUser);
 
 export default router;

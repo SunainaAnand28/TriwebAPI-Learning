@@ -3,13 +3,14 @@ import mongoose from "mongoose";
 
 import UserRoute from "./routers/user";
 import authRoute from "./routers/auth";
+import quizRoute from "./routers/quiz";
 import ProjectError from "./helper/error";
 
 const app = express();
 
 interface ReturnResponse {
     status: "success" | "error";
-    message: String,
+    message: string,
     data: {}
 }
 const connectionString = process.env.CONNECTION_STRING || "";
@@ -22,7 +23,7 @@ app.use(express.json());
 declare global {
     namespace Express {
         interface Request {
-            userId: String;
+            userId: string;
         }
     }
 }
@@ -38,14 +39,17 @@ app.use("/user", UserRoute);
 // Redirect /auth
 app.use("/auth", authRoute);
 
+// Redirect /quiz
+app.use("/quiz", quizRoute);
 
 app.use((err: ProjectError, req: Request, res: Response, next: NextFunction) => {
 
     // Email to corresponding email
     // logger for error 
 
-    let message: String;
+    let message: string;
     let statusCode: number;
+
     if (!!err.statusCode && err.statusCode < 500) {
         message = err.message;
         statusCode = err.statusCode;

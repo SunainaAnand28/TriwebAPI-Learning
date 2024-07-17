@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import jwt, { decode } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import ProjectError from "../helper/error";
 
 const isAuthenticated = async (
@@ -22,7 +22,7 @@ const isAuthenticated = async (
     const token = authHeader.split(' ')[1];
     console.log(token)
 
-    let decodedToken: { userId: String, iat: Number, exp: Number };
+    let decodedToken: { userId: string, iat: Number, exp: Number };
     try {
       decodedToken = <any>jwt.verify(token, "myprivatekey1234");
 
