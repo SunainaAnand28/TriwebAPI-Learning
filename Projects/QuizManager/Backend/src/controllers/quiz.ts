@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from "express";
+import { validationResult } from "express-validator";
 
 import Quiz from "../models/quiz";
 import ProjectError from "../helper/error";
@@ -12,6 +13,15 @@ interface ReturnResponse {
 
 const createQuiz = async (req: Request, res: Response, next: NextFunction) => {
     try {
+        const ValidationError = validationResult(req);
+        if(!ValidationError.isEmpty()){
+            const err = new ProjectError("Validation failed!")
+            err.statusCode = 422;
+            err.data = ValidationError.array();
+            throw err;
+        }
+
+
         const created_by = req.userId;
         const name = req.body.name;
         const questions_list = req.body.questions_list;
@@ -51,6 +61,15 @@ const getQuiz = async (req: Request, res: Response, next: NextFunction) => {
 
 const updateQuiz = async (req: Request, res: Response, next: NextFunction) => {
     try {
+        const ValidationError = validationResult(req);
+        if(!ValidationError.isEmpty()){
+            const err = new ProjectError("Validation failed!")
+            err.statusCode = 422;
+            err.data = ValidationError.array();
+            throw err;
+        }
+
+
         const quizId = req.body._id;
         const quiz = await Quiz.findById(quizId);
         if (!quiz) {
@@ -64,6 +83,13 @@ const updateQuiz = async (req: Request, res: Response, next: NextFunction) => {
                 err.statusCode = 403;
                 throw err;
            }
+
+           if(quiz.is_published){
+            const err = new ProjectError("You cannot update, published quiz!");
+                err.statusCode = 405;
+                throw err;
+           }
+ 
 
         quiz.name = req.body.name;
         quiz.questions_list = req.body.questions_list;
@@ -92,6 +118,12 @@ const deleteQuiz = async (req: Request, res: Response, next: NextFunction) => {
                 err.statusCode = 403;
                 throw err;
            }
+           if(quiz.is_published){
+            const err = new ProjectError("You cannot update, published quiz!");
+                err.statusCode = 405;
+                throw err;
+           }
+
         await Quiz.deleteOne({ _id:quizId})
         const resp: ReturnResponse = { status: "success", message: "Quiz Deleted", data: {} };
         res.status(200).send(req.body);
@@ -103,7 +135,13 @@ const deleteQuiz = async (req: Request, res: Response, next: NextFunction) => {
 
 const publishQuiz = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const quizId = req.body.params.quizId;
+        const { quizId } = req.body; // Access quizId from request body
+        if (!quizId) {
+            const err = new ProjectError("Quiz ID is required");
+            err.statusCode = 400;
+            throw err;
+        }
+
         const quiz = await Quiz.findById(quizId);
 
         if (!quiz) {
@@ -111,15 +149,18 @@ const publishQuiz = async (req: Request, res: Response, next: NextFunction) => {
             err.statusCode = 404;
             throw err;
         }
+
         quiz.is_published = true;
         await quiz.save();
+
         const resp: ReturnResponse = { status: "success", message: "Quiz Published", data: {} };
-        res.status(200).send(req.body);
-       
+        res.status(200).json(resp);
     } catch (error) {
         next(error);
     }
-}
+};
+
+                                                                                                                                                  
 
 
 export { createQuiz, getQuiz, updateQuiz, deleteQuiz, publishQuiz };

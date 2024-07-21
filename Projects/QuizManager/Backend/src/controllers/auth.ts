@@ -22,6 +22,12 @@ const registeruser = async (req: Request, res: Response, next: NextFunction) => 
 
         // Validation 
         const ValidationError = validationResult(req);
+        if(!ValidationError.isEmpty()){
+            const err = new ProjectError("Validation failed!")
+            err.statusCode = 422;
+            err.data = ValidationError.array();
+            throw err;
+        }
 
         //Validation end
         const email = req.body.email;

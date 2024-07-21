@@ -102,3 +102,9 @@ QUIZ ROUTE
 controller - function body
 model create for QUIZ
 authenticate - Postman - shortcut - environvent setup 
+-> Restriction on update and delete of published quiz.
+-> Explore postman environment variables
+-> Validation over quiz routes.
+
+-> Publish QUIZ
+* publishedquiz can not be updated nor deleted.
