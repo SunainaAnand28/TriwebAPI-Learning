@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken" ; 
+import jwt from "jsonwebtoken";
 import { validationResult } from "express-validator";
 
 import User from "../models/user";
@@ -14,15 +14,15 @@ interface ReturnResponse {
 
 // REGISTER
 const registeruser = async (req: Request, res: Response, next: NextFunction) => {
-    
-    
+
+
     let resp: ReturnResponse;
-    
+
     try {
 
         // Validation 
         const ValidationError = validationResult(req);
-        if(!ValidationError.isEmpty()){
+        if (!ValidationError.isEmpty()) {
             const err = new ProjectError("Validation failed!")
             err.statusCode = 422;
             err.data = ValidationError.array();
@@ -38,10 +38,11 @@ const registeruser = async (req: Request, res: Response, next: NextFunction) => 
         const result = await user.save();
 
         if (!result) {
-            resp = { status: "error",
-                 message: "No results Found",
-                  data: {}  ,
-                 };
+            resp = {
+                status: "error",
+                message: "No results Found",
+                data: {},
+            };
             res.send(resp);
         } else {
             resp = { status: "success", message: "Registration Done", data: { userId: result._id } };
@@ -50,7 +51,7 @@ const registeruser = async (req: Request, res: Response, next: NextFunction) => 
         }
 
     } catch (error) {
-       next(error);
+        next(error);
     }
 
 };
@@ -66,22 +67,22 @@ const loginUser = async (req: Request, res: Response, next: NextFunction) => {
         // find your user with email 
         const user = await User.findOne({ email })
 
-        if(!user){
+        if (!user) {
             const err = new ProjectError("No user exist");
             err.statusCode = 401;
             throw err;
-            
+
         }
-        
+
         // verify user password using bycrypt
         const status = await bcrypt.compare(password, user.password);
-        
+
         // then decide
-        if (status){
-            
-            const token = jwt.sign({ userId : user._id}, "myprivatekey1234",{expiresIn: "1h"} );
-            
-            resp = { status: "success", message: "user logged in!", data: {token} };
+        if (status) {
+
+            const token = jwt.sign({ userId: user._id }, "myprivatekey1234", { expiresIn: "1h" });
+
+            resp = { status: "success", message: "user logged in!", data: { token } };
             res.send(resp);
 
         } else {
@@ -92,19 +93,19 @@ const loginUser = async (req: Request, res: Response, next: NextFunction) => {
 
 
     } catch (error) {
-       next(error);
+        next(error);
     }
 
 
 }
 
-const isUserExist = async (email:String) => {
-    
-  // find your user with email 
+const isUserExist = async (email: String) => {
+
+    // find your user with email 
     const user = await User.findOne({ email })
 
-    if(!user){
-       return false;
+    if (!user) {
+        return false;
     }
     return true;
 }
