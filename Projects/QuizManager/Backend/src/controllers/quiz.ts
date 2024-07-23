@@ -28,8 +28,8 @@ const createQuiz = async (req: Request, res: Response, next: NextFunction) => {
         const answers = req.body.answers;
         const quiz = new Quiz({ name, questions_list, answers, created_by })
         const result = await quiz.save()
-        const resp: ReturnResponse = { status: "success", message: "Quiz created successfully", data: { quizId: result._id } }
-        res.status(201).send(req.body);
+        const resp: ReturnResponse = { status: "success", message: "Quiz created successfully", data: { quiz} }
+        res.status(201).send(resp);
     } catch (error) {
         next(error);
     }
