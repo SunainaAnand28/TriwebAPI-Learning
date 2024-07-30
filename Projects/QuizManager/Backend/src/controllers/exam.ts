@@ -6,7 +6,8 @@ import ProjectError from "../helper/error";
 
 const startExam = async (req: Request, res: Response, next : NextFunction)=>{
    try {
-    const quiz = await Quiz.findById(req.params.quizId);
+    const quizId = req.params.quizId;
+    const quiz = await Quiz.findById(quizId, {name:1, questions_list:1, is_published:1});
     if(!quiz){
       const err = new ProjectError("No Quiz Found");
       err.statusCode = 404;
