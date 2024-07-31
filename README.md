@@ -12,27 +12,27 @@ This document will guide you through the setup, structure, and specifics of the 
 
 ## Table of Contents
 
-- [Program Overview](#program-overview)
-- [HTML](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/HTML/form#readme)
+- [Program Overview](#program-overview) : Overview of the internship program and its goals.
+- [HTML](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/HTML/form#readme) : Basics of HTML for structuring web pages.
 
   
-- [CSS](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/CSS#readme)
-  - [Form](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/CSS/form#readme)
-  - [Time-Table](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/CSS/TIme-Table#readme)
-- [Programming](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/Programming#readme)
-  - [OOPs](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/Programming/OOPs#readme)
-- [JavaScript](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/JavaScript#readme)
-- [ES6](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/ES6#readme)
-- [ES2020](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/ES2020#readme)
-- [NodeJS](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/NodeJS#readme)
+- [CSS](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/CSS#readme) : Styling web pages using CSS. 
+  - [Form](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/CSS/form#readme) :  Creating and handling web forms.
+  - [Time-Table](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/CSS/TIme-Table#readme) : Creating timeline for the daily routine using HTML and CSS.
+- [Programming](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/Programming#readme) : Fundamental programming concepts and logic.
+  - [OOPs](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/Programming/OOPs#readme) :  Object-Oriented Programming principles.
+- [JavaScript](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/JavaScript#readme) : Core JavaScript concepts and syntax.
+- [ES6](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/ES6#readme) : Introduction to ES6 features in JavaScript.
+- [ES2020](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/ES2020#readme) : New features introduced in ES2020.
+- [NodeJS](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/NodeJS#readme) : Server-side JavaScript with Node.js.
 
-- [My SQL](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/My%20SQL#readme)
-- [MongoDB](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/MongoDB#readme)
-- [Projects](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/Projects#readme)
-  - [Basic HTML-CSS-JS Project](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/Projects/Basic%20HTML-CSS-JS%20Project#readme)
-  - [Basic JS Project](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/Projects/BasicJSProject#readme)
-- [TypeScript](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/TypeScript#readme)
-- [React](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/React#readme)
+- [My SQL](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/My%20SQL#readme) : Introduction to relational databases using MySQL.
+- [MongoDB](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/MongoDB#readme) : Working with NoSQL databases using MongoDB.
+- [Projects](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/Projects#readme) : Hands-on projects to apply learned skills.
+  - [Basic HTML-CSS-JS Project](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/Projects/Basic%20HTML-CSS-JS%20Project#readme) : Simple project using HTML, CSS, and JavaScript.
+  - [Basic JS Project](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/Projects/BasicJSProject#readme) : Project focusing on JavaScript functionalities.
+- [TypeScript](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/TypeScript#readme) : Introduction to TypeScript and its features.
+- [React](https://github.com/SunainaAnand28/TriwebAPI-Learning/tree/main/React#readme) : Building user interfaces using React.
 
 ## Program Overview
 
