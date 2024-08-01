@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express"
+import { RequestHandler } from "express"
 import mongoose from "mongoose";
 import Quiz from "../models/quiz";
 import Report from "../models/report";
@@ -12,7 +12,7 @@ interface ReturnResponse {
   data: {}
 }
 
-const startExam = async (req: Request, res: Response, next: NextFunction) => {
+const startExam: RequestHandler = async (req, res, next) => {
   try {
     const quizId = req.params.quizId;
     console.log(`Received quizId: ${quizId}`); // Log quizId
@@ -46,51 +46,52 @@ const startExam = async (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
-const submitExam = async (req: Request, res: Response, next : NextFunction)=>{
-   try {
+const submitExam: RequestHandler = async (req, res, next) => {
+  try {
     const quizId = req.body.quizId;
     const attempted_question = req.body.attempted_question;
 
-   const quiz = await Quiz.findById(quizId,{answers:1});
-   if(!quiz){
-    const err = new ProjectError("No Quiz Found");
-    err.statusCode = 404;
-    throw err;
-  }
-   // Converting Map to plain object
-   const answersMap: Map<string, string> = quiz.answers;
-   const answers: { [key: string]: string } = Object.fromEntries(answersMap);
-   // check Result
-   
-   const userId : string = req.userId;
-   let allQuestions : string[] = Object.keys(answers);
-   let total : number = allQuestions.length;
-   let score : number = 0;
+    const quiz = await Quiz.findById(quizId, { answers: 1 });
+    if (!quiz) {
+      const err = new ProjectError("No Quiz Found");
+      err.statusCode = 404;
+      throw err;
+    }
+    // Converting Map to plain object
+    const answersMap: Map<string, string> = quiz.answers;
+    const answers: { [key: string]: string } = Object.fromEntries(answersMap);
+    // check Result
 
-   for ( let i = 0; i< total ; i++){
-    let question_number : string = allQuestions[i];
-    if(!!attempted_question[question_number] && answers[question_number] === attempted_question[question_number]){
+    const userId: string = req.userId;
+    let allQuestions: string[] = Object.keys(answers);
+    let total: number = allQuestions.length;
+    let score: number = 0;
 
-         score = score + 1;
+    for (let i = 0; i < total; i++) {
+      let question_number: string = allQuestions[i];
+      if (!!attempted_question[question_number] && answers[question_number] === attempted_question[question_number]) {
 
-   }};
+        score = score + 1;
 
-
-   const report = new Report({userId, quizId, score, total})
-   const data = await report.save()
-
-   const resp: ReturnResponse = { status: "success", message: "Quiz submitted", data:{total, score, reportId: data._id } }
-   res.status(200).send(resp);
+      }
+    };
 
 
+    const report = new Report({ userId, quizId, score, total })
+    const data = await report.save()
 
-   } catch (error) {
-     next(error);
-   }
-  
-   
+    const resp: ReturnResponse = { status: "success", message: "Quiz submitted", data: { total, score, reportId: data._id } }
+    res.status(200).send(resp);
+
+
+
+  } catch (error) {
+    next(error);
   }
 
 
-  
-export {startExam,submitExam}; 
+}
+
+
+
+export { startExam, submitExam }; 

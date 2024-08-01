@@ -1,7 +1,7 @@
 import Report from "../models/report";
 import ProjectError from "../helper/error";
 
-import { Request, Response, NextFunction } from "express";
+import { RequestHandler } from "express";
 
 
 interface ReturnResponse {
@@ -10,7 +10,9 @@ interface ReturnResponse {
     data: {}
 }
 
-const getReport = async (req: Request, res: Response, next: NextFunction) => {
+// const getReport: RequestHandler = async (req: Request, res: Response, next: NextFunction)
+
+const getReport: RequestHandler = async (req, res, next) => {
 
     try {
 
@@ -35,7 +37,7 @@ const getReport = async (req: Request, res: Response, next: NextFunction) => {
         } else {
             report = await Report.find({ userId: req.userId });
         }
-        
+
         const resp: ReturnResponse = { status: "success", message: "Report", data: report };
         res.status(200).send(resp);
 

@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express";
+import { RequestHandler } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { validationResult } from "express-validator";
@@ -13,7 +13,7 @@ interface ReturnResponse {
 }
 
 // REGISTER
-const registeruser = async (req: Request, res: Response, next: NextFunction) => {
+const registeruser: RequestHandler = async (req, res, next) => {
 
 
     let resp: ReturnResponse;
@@ -57,7 +57,7 @@ const registeruser = async (req: Request, res: Response, next: NextFunction) => 
 };
 
 // login 
-const loginUser = async (req: Request, res: Response, next: NextFunction) => {
+const loginUser: RequestHandler = async (req, res, next) => {
     let resp: ReturnResponse;
 
     try {

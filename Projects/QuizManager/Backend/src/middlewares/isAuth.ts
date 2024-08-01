@@ -1,12 +1,8 @@
-import { Request, Response, NextFunction } from "express";
+import { RequestHandler } from "express";
 import jwt from "jsonwebtoken";
 import ProjectError from "../helper/error";
 
-const isAuthenticated = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const isAuthenticated: RequestHandler = async (req, res, next) => {
 
   try {
 
@@ -14,7 +10,7 @@ const isAuthenticated = async (
 
     if (!authHeader) {
       const err = new ProjectError("Not authenticated");
-       err.statusCode = 401;
+      err.statusCode = 401;
       throw err;
     }
     // jwt -> decode using sign "myprivatekey1234"
@@ -34,8 +30,8 @@ const isAuthenticated = async (
 
     if (!decodedToken) {
       const err = new ProjectError("No user exist");
-            err.statusCode = 401;
-            throw err;
+      err.statusCode = 401;
+      throw err;
     }
     // userId 
     req.userId = decodedToken.userId;

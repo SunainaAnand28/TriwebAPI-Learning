@@ -119,3 +119,5 @@ Report Module
 - fetch report
 - User can get the report by /:resultId 
 - Optional Parameter
+
+* req: Request, res: Response, next: NextFunction how to handle.

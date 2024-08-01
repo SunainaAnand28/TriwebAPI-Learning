@@ -1,5 +1,4 @@
-// send/recieve data to/from database via model
-import { Request, Response, NextFunction } from "express";
+import { RequestHandler } from "express";
 
 import User from "../models/user";
 import ProjectError from "../helper/error";
@@ -12,16 +11,16 @@ interface ReturnResponse {
 
 
 // GET
-const getUser = async (req: Request, res: Response, next: NextFunction ) => {
-   
+const getUser: RequestHandler = async (req, res, next) => {
+
 
     let resp: ReturnResponse;
     try {
         const userId = req.params.userId;
-        if(req.userId != req.params.userId){
-            const err = new ProjectError ("You are not authorized");
+        if (req.userId != req.params.userId) {
+            const err = new ProjectError("You are not authorized");
             err.statusCode = 401;
-            err.data = { hi: "It is error"};
+            err.data = { hi: "It is error" };
             throw err;
         }
 
@@ -36,7 +35,7 @@ const getUser = async (req: Request, res: Response, next: NextFunction ) => {
             res.status(200).send(resp);
         }
 
-    } catch (error:any) {
+    } catch (error: any) {
         next(error);
     }
 
@@ -44,13 +43,13 @@ const getUser = async (req: Request, res: Response, next: NextFunction ) => {
 
 
 // UPDATE
-const updateUser = async (req: Request, res: Response, next: NextFunction) => {
+const updateUser: RequestHandler = async (req, res, next) => {
     let resp: ReturnResponse;
 
     try {
 
-        if(req.userId != req.body._id){
-            const err = new ProjectError ("You are not authorized");
+        if (req.userId != req.body._id) {
+            const err = new ProjectError("You are not authorized");
             err.statusCode = 401;
             throw err;
         }
@@ -71,7 +70,7 @@ const updateUser = async (req: Request, res: Response, next: NextFunction) => {
         return res.status(200).send(resp);
 
     } catch (error) {
-       next(error);
+        next(error);
     }
 }
 
