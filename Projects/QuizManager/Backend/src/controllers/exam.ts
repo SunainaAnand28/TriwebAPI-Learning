@@ -1,16 +1,10 @@
 import { RequestHandler } from "express"
 import mongoose from "mongoose";
+
 import Quiz from "../models/quiz";
 import Report from "../models/report";
 import ProjectError from "../helper/error";
-import Result from "../models/report";
-
-
-interface ReturnResponse {
-  status: "success" | "error";
-  message: string,
-  data: {}
-}
+import { ReturnResponse } from "../utils/interfaces";
 
 const startExam: RequestHandler = async (req, res, next) => {
   try {

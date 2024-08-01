@@ -2,13 +2,7 @@ import { RequestHandler } from "express";
 
 import User from "../models/user";
 import ProjectError from "../helper/error";
-
-interface ReturnResponse {
-    status: "success" | "error";
-    message: String,
-    data: {} | []
-}
-
+import { ReturnResponse } from "../utils/interfaces";
 
 // GET
 const getUser: RequestHandler = async (req, res, next) => {
