@@ -108,3 +108,6 @@ authenticate - Postman - shortcut - environvent setup
 
 -> Publish QUIZ
 * publishedquiz can not be updated nor deleted.
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+fetch

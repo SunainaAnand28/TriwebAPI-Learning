@@ -43,7 +43,7 @@ app.use("/auth", authRoute);
 // Redirect /quiz
 app.use("/quiz", quizRoute);
 
-// POST /exam
+// Redirect /exam
 app.use("/exam", examRoute);
 
 app.use((err: ProjectError, req: Request, res: Response, next: NextFunction) => {
