@@ -96,6 +96,7 @@ Question:
 If user logged in and sent the PUT token with 1 hour expiry
   Scene 1 : then token will expire after one hour.
   Scene 2 : Token should expire after 1 hour of inactivity.
+
 ------------------
 QUIZ ROUTE 
 
@@ -108,6 +109,13 @@ authenticate - Postman - shortcut - environvent setup
 
 -> Publish QUIZ
 * publishedquiz can not be updated nor deleted.
+
 +++++++++++++++++++++++++++++++++++++++++++++++++++
 
-fetch
+Report Module
+
+- start exam 
+- submit exam
+- fetch report
+- User can get the report by /:resultId 
+- Optional Parameter

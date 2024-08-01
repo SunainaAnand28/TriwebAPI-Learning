@@ -79,7 +79,7 @@ const submitExam = async (req: Request, res: Response, next : NextFunction)=>{
    const report = new Report({userId, quizId, score, total})
    const data = await report.save()
 
-   const resp: ReturnResponse = { status: "success", message: "Quiz submitted", data:{total, score, resultId: data._id } }
+   const resp: ReturnResponse = { status: "success", message: "Quiz submitted", data:{total, score, reportId: data._id } }
    res.status(200).send(resp);
 
 
