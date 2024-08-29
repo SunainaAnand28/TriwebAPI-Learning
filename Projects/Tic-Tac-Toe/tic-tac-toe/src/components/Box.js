@@ -1,16 +1,15 @@
-function Box (props){
-    return <div 
-    onClick={props.onClick}
-    style={{
-         display:"flex",
-         justifyContent: "center", alignItems:'center',
-         border: "1px solid black",
-         height: "100px", }}
+import './Box.css';
+
+function Box(props) {
+  return (
+    <div
+      onClick={props.onClick}
+      className={`box ${props.className}`}
+      style={{ ...props.style }}
     >
-    <h2>{props.value}</h2>
-   
-    </div>  
-    
+      <h2>{props.value}</h2>
+    </div>
+  );
 }
 
 export default Box;
