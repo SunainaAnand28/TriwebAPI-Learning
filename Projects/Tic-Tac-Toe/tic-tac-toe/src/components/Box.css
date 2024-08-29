@@ -1,0 +1,17 @@
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    font-size: 2rem;
+    color: rgb(30, 30, 30);
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* Optional: Add margin for spacing if needed */
+    margin: 0 auto;
+  }
+  
